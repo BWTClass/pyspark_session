@@ -22,72 +22,73 @@ if __name__ == '__main__':
     csvwithschemadf = spark.read.csv(
         path=r"C:\Users\tadit\PycharmProjects\pyspark_sessions\input\inputfile_withheader.csv", schema=dataschema1,
         header=True)
-    # csvwithschemadf.printSchema()
-    # csvwithschemadf.show()
+    csvwithschemadf.printSchema()
+    csvwithschemadf.show()
 
     # write dataframe in csv file
-    # csvwithschemadf.write.csv(r"D:\gitclone\pyspark_session\output\csvoutput", sep="\\t")
+    csvwithschemadf.write.csv(r"D:\gitclone\pyspark_session\output\csvoutput", sep="\\t")
 
-    # # write dataframe in JSON file
-    # csvwithschemadf.write.json(r"D:\gitclone\pyspark_session\output\jsonoutput", mode="overwrite")
+    # write dataframe in JSON file
+    csvwithschemadf.write.json(r"D:\gitclone\pyspark_session\output\jsonoutput", mode="overwrite")
 
-    # # write dataframe in orc file
-    # csvwithschemadf.write.orc(r"D:\gitclone\pyspark_session\output\orcoutput")
-    #
-    # # parquet file
-    # csvwithschemadf.write.parquet(r"D:\gitclone\pyspark_session\output\parquetoutput")
+    # write dataframe in orc file
+    csvwithschemadf.write.orc(r"D:\gitclone\pyspark_session\output\orcoutput")
 
-    # # create a dataframe from json
-    # jsondf = spark.read.json(r"D:\gitclone\pyspark_session\output\jsonoutput\*.json")
-    # jsondf.printSchema()
-    # jsondf.show()
+    # parquet file
+    csvwithschemadf.write.parquet(r"D:\gitclone\pyspark_session\output\parquetoutput")
 
-    # # Parquet
-    # parquetdf = spark.read.parquet(r"D:\gitclone\pyspark_session\output\parquetoutput\*")
-    # parquetdf.printSchema()
-    # parquetdf.show()
+    # create a dataframe from json
+    jsondf = spark.read.json(r"D:\gitclone\pyspark_session\output\jsonoutput\*.json")
+    jsondf.printSchema()
+    jsondf.show()
+
+    # Parquet
+    parquetdf = spark.read.parquet(r"D:\gitclone\pyspark_session\output\parquetoutput\*")
+    parquetdf.printSchema()
+    parquetdf.show()
 
     # #create empty dataframe
     rdd1 = spark.sparkContext.parallelize([])
-    # print(rdd1.collect())
+    print(rdd1.collect())
     df1 = spark.createDataFrame(rdd1, schema=dataschema1)
-    # df1.show()
+    df1.show()
 
-    # # select function
-    # csvwithschemadf.cache()
+    # select function
+    csvwithschemadf.cache()
     csvwithschemadf.printSchema()
-    # csvwithschemadf.show()
-    # csvwithschemadf.cache()
-    # csvwithschemadf.cache()
-    # csvwithschemadf.select(csvwithschemadf.fname).show()
-    # csvwithschemadf.select(csvwithschemadf.fname.alias("firstname")).show()
-    # csvwithschemadf.select(col("fname"),col("lname")).show()
-    # csvwithschemadf.select(["fname","lname"]).show()
+    csvwithschemadf.show()
+    csvwithschemadf.cache()
+    csvwithschemadf.cache()
+    csvwithschemadf.select(csvwithschemadf.fname).show()
+    csvwithschemadf.select(csvwithschemadf.fname.alias("firstname")).show()
+    csvwithschemadf.select(col("fname"),col("lname")).show()
+    csvwithschemadf.select(["fname","lname"]).show()
 
-    # # dealing with nested data
-    # jsonnesteddf = spark.read.format("json").load(r"D:\gitclone\pyspark_session\input\nestedjson.json")
-    # jsonnesteddf.printSchema()
-    # jsonnesteddf.select(jsonnesteddf.address.city).show()
-    # jsonnesteddf.select(["address.city", "address.state"]).show()
-    # jsonnesteddf.select("*").show()
+    # dealing with nested data
+    jsonnesteddf = spark.read.format("json").load(r"D:\gitclone\pyspark_session\input\nestedjson.json")
+    jsonnesteddf.printSchema()
+    jsonnesteddf.select(jsonnesteddf.address.city).show()
+    jsonnesteddf.select(["address.city", "address.state"]).show()
+    jsonnesteddf.select("*").show()
 
-    # print(csvwithschemadf.columns)
+    # get all columns from dataframe
+    print(csvwithschemadf.columns)
 
     # withColumns()
     # csvwithschemadf.show()
-    # # existing column value change
-    # csvwithschemadf.withColumn("salary", col("salary") * 10).show()
-    # # change datatype of existing column
-    # csvwithschemadf.withColumn("deptno", col("deptno").cast("string")).printSchema()
-    # # adding new column
-    # csvwithschemadf.withColumn("state",lit(10)).printSchema()
+    # existing column value change
+    csvwithschemadf.withColumn("salary", col("salary") * 10).show()
+    # change datatype of existing column
+    csvwithschemadf.withColumn("deptno", col("deptno").cast("string")).printSchema()
+    # adding new column
+    csvwithschemadf.withColumn("state",lit(10)).printSchema()
 
     # withColumnRenamed
-    # csvwithschemadf.withColumnRenamed("fname","firstname").show()
+    csvwithschemadf.withColumnRenamed("fname","firstname").show()
 
-    # # filter
-    # csvwithschemadf.filter(col("gender") == "M").show()
-    # csvwithschemadf.filter((col("gender") == "M") & (col("salary") > 25000)).show()
+    # filter
+    csvwithschemadf.filter(col("gender") == "M").show()
+    csvwithschemadf.filter((col("gender") == "M") & (col("salary") > 25000)).show()
 
     # drop(), dropDuplicate() distinct()
     from pyspark.sql import Row
@@ -100,17 +101,17 @@ if __name__ == '__main__':
     # df1.show()
     # df1.printSchema()
 
-    # # distinct()
-    # df1.distinct().show()
-    #
-    # # droptDuplicate()
-    # df1.dropDuplicates(['name']).show()
+    # distinct()
+    df1.distinct().show()
 
-    # # drop
-    # df1.drop('age').show()
+    # droptDuplicate()
+    df1.dropDuplicates(['name']).show()
 
-    # # groupby() -- Aggregate function
-    # csvwithschemadf.groupby('deptno').avg('salary').show()
+    # drop
+    df1.drop('age').show()
+
+    # groupby() -- Aggregate function
+    csvwithschemadf.groupby('deptno').avg('salary').show()
 
     # Join
     data1 = [Row(deptno=11, deptname='HR'),
@@ -118,21 +119,21 @@ if __name__ == '__main__':
              ]
     deptdf = spark.sparkContext.parallelize(data1).toDF()
     deptdf.printSchema()
-    #
-    # # inner, left , right, full , semi
-    # csvwithschemadf.join(deptdf,
-    #                      on=csvwithschemadf.deptno == deptdf.deptno,
-    #                      how='inner').select(["id", "fname", "lname", csvwithschemadf.deptno, "deptname"]).show()
-    #
-    # # left join
-    # csvwithschemadf.join(deptdf,
-    #                      on=csvwithschemadf.deptno == deptdf.deptno,
-    #                      how='left').show()
-    #
-    # # antijoin
-    # csvwithschemadf.join(deptdf,
-    #                      on=csvwithschemadf.deptno == deptdf.deptno,
-    #                      how='left_anti').show()
+
+    # inner, left , right, full , semi
+    csvwithschemadf.join(deptdf,
+                         on=csvwithschemadf.deptno == deptdf.deptno,
+                         how='inner').select(["id", "fname", "lname", csvwithschemadf.deptno, "deptname"]).show()
+
+    # left join
+    csvwithschemadf.join(deptdf,
+                         on=csvwithschemadf.deptno == deptdf.deptno,
+                         how='left').show()
+
+    # antijoin
+    csvwithschemadf.join(deptdf,
+                         on=csvwithschemadf.deptno == deptdf.deptno,
+                         how='left_anti').show()
 
     # union
     data2 = [Row(deptno=11, deptname='HR'),
