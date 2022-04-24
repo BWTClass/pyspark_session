@@ -1,0 +1,5 @@
+{"id":1,"fname":"Yesh","lname":"Patil","age":29,"gender":"M","deptno":11,"salary":20000}
+{"id":2,"fname":"Ram","lname":"Wagh","age":30,"gender":"M","deptno":12,"salary":30000}
+{"id":3,"fname":"Sita","lname":"Patil","age":29,"gender":"F","deptno":11,"salary":50000}
+{"id":4,"fname":"Kiran","lname":"XYZ","age":33,"gender":"F","deptno":11,"salary":40052}
+{"id":5,"fname":"Savita","lname":"Waghmare","age":35,"gender":"F","deptno":13,"salary":800000}
