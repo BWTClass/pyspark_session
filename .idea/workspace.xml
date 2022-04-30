@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6040e7ea-14e9-4091-881b-162a7fd0cddf" name="Changes" comment="Initial comment">
-      <change afterPath="$PROJECT_DIR$/Session_one/pyspark2404.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/nestedjson.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pyspark_session.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pyspark_session.iml" afterDir="false" />
+    <list default="true" id="6040e7ea-14e9-4091-881b-162a7fd0cddf" name="Changes" comment="Session no. 3 on 24/04/2022">
+      <change afterPath="$PROJECT_DIR$/input/department.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input/employee_details.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input/employee_details1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/session_practice/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/session_practice/session_third.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +32,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.google.cloudcode.ide_session_index" value="20220424_0006" />
+    <property name="com.google.cloudcode.ide_session_index" value="20220429_0001" />
     <property name="exceleditor.install" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/input" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sparklearning" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -40,7 +43,7 @@
       <recent name="D:\gitclone\pyspark_session" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.pyspark2404">
+  <component name="RunManager" selected="Python.session_third">
     <configuration name="pyspark2404" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pyspark_session" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,8 +86,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="session_third" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pyspark_session" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/session_practice" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/session_practice/session_third.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.session_third" />
         <item itemvalue="Python.pyspark2404" />
         <item itemvalue="Python.readwriter" />
       </list>
@@ -106,7 +131,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650711723711</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Session no. 3 on 24/04/2022">
+      <created>1650791406229</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650791406229</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Session no. 3 on 24/04/2022">
+      <created>1650793130438</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650793130438</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +162,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial comment" />
+    <MESSAGE value="Session no. 3 on 24/04/2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="Session no. 3 on 24/04/2022" />
   </component>
 </project>
